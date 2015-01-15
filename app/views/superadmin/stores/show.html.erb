@@ -1,0 +1,33 @@
+<div class="container">
+	<div class="row">
+		<%= link_to '商家資訊修改', edit_superadmin_store_path(@store) %> | 
+		<%= link_to '新增商品', new_superadmin_product_path %> | 
+		<%= link_to '回商家清單', superadmin_stores_path %>
+	</div>
+</div>	
+<hr>
+<div class="container">
+	<div class="row">
+		商家名:<%= @store.name %>
+	</div>
+</div>
+<hr>
+<div class="container">
+	<div class="row">
+	產品列表<hr>
+		<table class="table table-hover">
+			<tr>
+			  <td>產品名稱</td>
+			  <td>價格</td>
+			  <td>描述</td>
+			</tr>		
+			<% @products.each do |p| %>
+		  	<tr>
+				  <td><%= p.name %></td>
+				  <td><%= p.price %></td>
+				  <td><%= p.desc %></td>
+				</tr>
+			<% end %>
+		</table>
+	</div>
+</div>

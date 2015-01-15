@@ -1,0 +1,12 @@
+<div class="container">
+	<div class="row">
+		<%= bootstrap_form_for [:superadmin, @store]  do |f| %>
+		<%= f.text_field :name %>
+		<%= f.text_field :owner_user %>
+		<%= f.text_field :address %>
+		<%= f.text_field :zip %>
+		<%= f.text_field :tel %>
+		<%= f.submit 'submit' %>
+		<% end %>
+	</div>
+</div>

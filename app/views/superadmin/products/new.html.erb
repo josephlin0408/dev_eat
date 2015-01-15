@@ -1,0 +1,20 @@
+<div class="container">
+	<div class="row">
+		<% @products.each do |p| %>
+			sid <%= session[:sid] %>
+		  <%= p.name %><br>
+		<% end %>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<%= bootstrap_form_for [:superadmin, @product] do |f| %>
+		<%= f.hidden_field :store_id, value: session[:sid] %>
+		<%= f.text_field :name %>
+		<%= f.text_field :price %>
+		<%= f.text_area :desc %>
+		<%= f.submit 'submit' %>
+		<%= link_to 'back Store', superadmin_store_path(session[:sid]) %>
+		<% end %>
+	</div>
+</div>

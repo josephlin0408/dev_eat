@@ -1,0 +1,19 @@
+<div class="container">
+	<div class="row">
+		<hr>
+		<table class="table table-hover">
+			<tr>
+				<td>商家名</td>
+				<td>店長</td>
+				<td>電話</td>
+			</tr>
+			<% @stores.each do |item| %>
+			<tr>
+				<td><%= link_to item.name, store_path(item) %></td>
+				<td><%= item.owner_user %></td>
+				<td><%= item.tel %></td>
+			</tr>
+			<% end %>
+		</table>
+	</div>
+</div>

@@ -1,0 +1,20 @@
+<div class="container">
+	<div class="row">
+		<%= link_to 'New', new_superadmin_store_path, class: 'btn btn-primary' %>
+		<hr>
+		<table class="table table-hover">
+			<tr>
+				<td>店家名稱</td>
+				<td>所屬用戶</td>
+				<td>室內電話</td>
+			</tr>
+			<% @stores.each do |item| %>
+			<tr>
+				<td><%= link_to item.name, superadmin_store_path(item) %></td>
+				<td><%= item.owner_user %></td>
+				<td><%= item.tel %></td>
+			</tr>
+			<% end %>
+		</table>
+	</div>
+</div>

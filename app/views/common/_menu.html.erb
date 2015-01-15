@@ -1,0 +1,8 @@
+會員中心
+<%= link_to 'logout', destroy_user_session_path, method: :delete %>
+<%= current_user.email %>
+<%= 
+if current_user.admin?
+	controller.class.to_s.include?('Superadmin')? link_to('前台', root_path) : link_to('管理後台', superadmin_root_path)
+end
+%>
