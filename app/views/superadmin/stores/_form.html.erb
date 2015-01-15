@@ -1,3 +1,11 @@
+<%= render 'superadmin/share/menu' %>
+<div class="container">
+	<div class="row">
+		Action =>
+		<%= link_to 'Back', superadmin_store_path(@store) %>
+	</div>
+</div>	
+<hr>
 <div class="container">
 	<div class="row">
 		<%= bootstrap_form_for [:superadmin, @store]  do |f| %>

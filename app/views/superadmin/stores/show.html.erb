@@ -1,8 +1,9 @@
+<%= render 'superadmin/share/menu' %>
 <div class="container">
 	<div class="row">
-		<%= link_to '商家資訊修改', edit_superadmin_store_path(@store) %> | 
-		<%= link_to '新增商品', new_superadmin_product_path %> | 
-		<%= link_to '回商家清單', superadmin_stores_path %>
+		Action =>
+		<%= link_to '資訊修改', edit_superadmin_store_path(@store) %> | 
+		<%= link_to '商家菜單', superadmin_products_path %> | 
 	</div>
 </div>	
 <hr>

@@ -1,11 +1,12 @@
+<%= render 'superadmin/share/menu' %>
 <div class="container">
 	<div class="row">
-		<% @products.each do |p| %>
-			sid <%= session[:sid] %>
-		  <%= p.name %><br>
-		<% end %>
+		Action =>
+		<%= link_to 'Back Menu', superadmin_products_path %>
+		<%= link_to 'Back Store', superadmin_store_path(session[:sid]) %>
 	</div>
-</div>
+</div>	
+<hr>
 <div class="container">
 	<div class="row">
 		<%= bootstrap_form_for [:superadmin, @product] do |f| %>
@@ -14,7 +15,7 @@
 		<%= f.text_field :price %>
 		<%= f.text_area :desc %>
 		<%= f.submit 'submit' %>
-		<%= link_to 'back Store', superadmin_store_path(session[:sid]) %>
 		<% end %>
 	</div>
 </div>
+<%= now_add %>
