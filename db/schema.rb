@@ -11,9 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150114071919) do
+ActiveRecord::Schema.define(version: 20150116022248) do
 
   create_table "products", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.integer  "price",      limit: 4
+    t.text     "desc",       limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  create_table "store_categories", force: :cascade do |t|
+    t.integer  "store_id",   limit: 4
+    t.string   "title",      limit: 255
+    t.string   "anchor",     limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "store_products", force: :cascade do |t|
     t.integer  "store_id",   limit: 4
     t.string   "name",       limit: 255
     t.integer  "price",      limit: 4
@@ -28,7 +44,7 @@ ActiveRecord::Schema.define(version: 20150114071919) do
     t.string   "address",    limit: 255
     t.integer  "zip",        limit: 4
     t.string   "tel",        limit: 255
-    t.string   "power",      limit: 255
+    t.integer  "power_cd",   limit: 4
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end

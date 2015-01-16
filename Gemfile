@@ -12,6 +12,7 @@ gem 'nokogiri'
 gem 'albino'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'simple_enum', '~> 2.0.0' , require: 'simple_enum/mongoid'
 
 group :development, :test do
 	# Debug

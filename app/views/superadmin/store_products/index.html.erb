@@ -1,9 +1,10 @@
 <%= render 'superadmin/share/menu' %>
 <div class="container">
 	<div class="row">
+		Product Nav =>
+		<%= link_to 'Back Store', superadmin_store_path(session[:sid]) %><br>
 		Action =>
-		<%= link_to '新增商品', new_superadmin_product_path %> | 
-		<%= link_to 'Back Store', superadmin_store_path(session[:sid]) %>
+		<%= link_to '新增商品', new_superadmin_store_product_path %> | 
 	</div>
 </div>	
 <hr>
@@ -16,7 +17,7 @@
 				<td>價格</td>
 				<td>描述</td>
 			</tr>
-			<% @products.each do |p| %>
+			<% @store_products.each do |p| %>
 				<tr>
 					<td><%= p.store_id %></td>
 					<td><%= p.name %></td>

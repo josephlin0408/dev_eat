@@ -26,11 +26,11 @@ class Superadmin::StoresController < Superadmin::BaseController
 	def show
 		# 因為在商家頁時,會有新增產品的需求, 所以用一個session去記住現在是哪間商家.
 		session[:sid] = @store.id
-		@products = Product.where(store_id: params[:id])
+		@products = StoreProduct.where(store_id: params[:id])
 	end
 
 	private
 	def store_params
-		params.require(:store).permit(:name, :owner_user, :address, :zip, :tel)
+		params.require(:store).permit(:name, :owner_user, :address, :zip, :tel, :power)
 	end
 end

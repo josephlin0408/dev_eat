@@ -6,7 +6,7 @@ class CreateStores < ActiveRecord::Migration
       t.string :address
       t.integer :zip
       t.string :tel
-      t.string :power
+      t.integer :power_cd
 
       t.timestamps null: false
     end

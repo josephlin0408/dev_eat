@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 	namespace :superadmin do
 		root 'stores#index'
 		resources :stores
-		resources :products
+		resources :store_category
+		resources :store_products
 	end	
 end
