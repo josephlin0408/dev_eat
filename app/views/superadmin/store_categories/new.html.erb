@@ -1,14 +1,14 @@
 <%= render 'superadmin/share/menu' %>
 <div class="container">
 	<div class="row">
-		Product Nav =>
-		<%= link_to 'Back Menu', new_superadmin_store_category_path %>
+		Nav =>
+		<%= link_to 'Back List', superadmin_store_categories_path %>
 	</div>
 </div>	
 <hr>
 <div class="container">
 	<div class="row">
-		<%= bootstrap_form_for [:superadmin, @store_categories] do |f| %>
+		<%= bootstrap_form_for [:superadmin, @store_category] do |f| %>
 		<%= f.hidden_field :store_id, value: session[:sid] %>
 		<%= f.text_field :title %>
 		<%= f.text_field :anchor %>

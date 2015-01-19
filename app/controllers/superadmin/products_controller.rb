@@ -11,8 +11,8 @@ class Superadmin::ProductsController < Superadmin::BaseController
 			session[:now_add] =[]
 		end
 		@product = Product.new(product_params)
-		if @product.save
-			flash[:notice] = "#{@product.name}Save"
+		if @product.Save
+			flash[:notice] = "#{@product.name} Save"
 			redirect_to new_superadmin_product_url
 			session[:now_add] << @product
 		else

@@ -1,12 +1,14 @@
 class Superadmin::StoreCategoriesController < Superadmin::BaseController
-	def index; end
+	def index
+		@store_categories = StoreCategory.all
+	end
 	def new
-		@store_categories = StoreCategory.new
+		@store_category = StoreCategory.new
 	end
 	def create
 		@store_category = StoreCategory.new(store_category)
 		if @store_category.save
-			flash[:notice] = "#{@store_category.title}Save"
+			flash[:notice] = "#{@store_category.title} Save"
 			redirect_to superadmin_store_categories_path
 		else
 			flash[:notice] = "#{@store_category.title} Error"
