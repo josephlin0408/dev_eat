@@ -4,7 +4,7 @@
 	<div class="row">
 		<%= bootstrap_form_for [:superadmin, @store]  do |f| %>
 		<%= f.text_field :name %>
-		<%= f.text_field :owner_user %>
+		<%= f.text_field :user_id %>
 		<%= f.select :power, enum_option_pairs(Store, :power) %>
 		<%= f.select :status, enum_option_pairs(Store, :status) %>
 		<%= f.text_field :address %>

@@ -12,7 +12,7 @@
 			<% @stores.each do |item| %>
 			<tr>
 				<td><%= link_to item.name, superadmin_store_path(item) %></td>
-				<td><%= item.owner_user %></td>
+				<td><%= item.user_id %></td>
 				<td><%= item.tel %></td>
 			</tr>
 			<% end %>

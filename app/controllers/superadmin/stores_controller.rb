@@ -31,6 +31,6 @@ class Superadmin::StoresController < Superadmin::BaseController
 
 	private
 	def store_params
-		params.require(:store).permit(:name, :owner_user, :address, :zip, :tel, :power, :status)
+		params.require(:store).permit(:name, :user_id, :address, :zip, :tel, :power, :status)
 	end
 end

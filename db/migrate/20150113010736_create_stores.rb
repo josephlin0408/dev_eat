@@ -2,7 +2,7 @@ class CreateStores < ActiveRecord::Migration
   def change
     create_table :stores do |t|
       t.string :name
-      t.string :owner_user
+      t.string :user_id
       t.string :address
       t.integer :zip
       t.string :tel
