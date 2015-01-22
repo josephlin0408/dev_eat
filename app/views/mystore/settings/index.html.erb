@@ -1,0 +1,9 @@
+
+我擁有的商家<br>
+<% @settings.each do |f| %>
+<%= f.name %>
+<%= link_to 'edit', edit_mystore_setting_path(f) %>
+<hr>
+<% end %>
+<hr>
+希望按下edit時, 他可以跳出一個框框, 帶出這間店的資訊＆可以修改.
