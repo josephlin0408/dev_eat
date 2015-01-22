@@ -1,10 +1,8 @@
 <hr>
 <div class="container">
 	<div class="row">
-		<%= bootstrap_form_for [:mystore, @setting] do |f| %>
+		<%= bootstrap_form_for @setting, url: mystore_setting_path(@setting) do |f| %>
 		<%= f.text_field :name %>
-		<%= f.text_field :user_id %>
-		<%= f.select :power, enum_option_pairs(Store, :power) %>
 		<%= f.select :status, enum_option_pairs(Store, :status) %>
 		<%= f.text_field :address %>
 		<%= f.text_field :zip %>
