@@ -28,5 +28,3 @@ class Superadmin::StoreProductsController < Superadmin::BaseController
 		params.require(:store_product).permit(:store_id, :name, :price, :desc, :category)
 	end
 end
-
-
