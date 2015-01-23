@@ -1,7 +1,7 @@
 
 我擁有的商家<br>
 <% @settings.each do |f| %>
-<%= f.name %>
+<%= link_to f.name, mystore_product_path(f.id) %>
 <%= link_to 'edit', edit_mystore_setting_path(f) %>
 <hr>
 <% end %>

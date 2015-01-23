@@ -1,0 +1,22 @@
+<%= link_to 'new', new_mystore_product_path %>
+<hr>
+<div class="container">
+	<div class="row">
+		<table class="table table-hover">
+			<tr>
+				<td>sid</td>
+				<td>餐點名稱</td>
+				<td>價格</td>
+				<td>描述</td>
+			</tr>
+			<% @products.each do |p| %>
+				<tr>
+					<td><%= p.store_id %></td>
+					<td><%= p.name %></td>
+					<td><%= p.price %></td>
+					<td><%= p.desc %></td>
+				</tr>
+			<% end %>
+		</table>
+	</div>
+</div>
