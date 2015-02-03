@@ -6,6 +6,7 @@ class StoresController < ApplicationController
 	end
 	def show
 		@store = Store.find_by(id: params[:id])
+		@products = StoreProduct.where(store_id: params[:id])
 	end
 	def take
 		#先判斷是否登入, 先判斷這筆資料是否已經存在, 如果存在則不寫入.

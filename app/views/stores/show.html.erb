@@ -1,7 +1,28 @@
+
 <div class="container">
 	<div class="row">
 		<%= notice %><br>
-		商家名:<%= @store.name %><br>
+		<%= link_to '我要領回', take_store_path %><br>
+		商家名:<%= @store.name %>
 	</div>
 </div>
-<%= link_to '我要領回', take_store_path %>
+<hr>
+<div class="container">
+	<div class="row">
+	<h4>產品列表</h4>
+		<table class="table table-hover">
+			<tr>
+			  <td>產品名稱</td>
+			  <td>價格</td>
+			  <td>描述</td>
+			</tr>		
+			<% @products.each do |p| %>
+		  	<tr>
+				  <td><%= p.name %></td>
+				  <td><%= p.price %></td>
+				  <td><%= p.desc %></td>
+				</tr>
+			<% end %>
+		</table>
+	</div>
+</div>
