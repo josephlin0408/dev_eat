@@ -1,0 +1,15 @@
+
+<div class="container">
+	<div class="row">
+		<%= bootstrap_form_for @store do |f| %>
+		<%= f.text_field :name %>
+		<%= f.hidden_field :user_id, value: '0'%>
+		<%= f.select :power, enum_option_pairs(Store, :power) %>
+		<%= f.select :status, enum_option_pairs(Store, :status) %>
+		<%= f.text_field :address %>
+		<%= f.text_field :zip %>
+		<%= f.text_field :tel %>
+		<%= f.submit 'submit' %>
+		<% end %>
+	</div>
+</div>

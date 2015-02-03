@@ -4,6 +4,18 @@ class StoresController < ApplicationController
 	def index
 		@stores = Store.all
 	end
+	def new
+		@store = Store.new
+	end
+	def create
+		@store = Store.new(store_params)
+		@store.user_id = 0
+		if @store.save
+			redirect_to stores_url
+		else
+			render :new
+		end
+	end
 	def show
 		@store = Store.find_by(id: params[:id])
 		@products = StoreProduct.where(store_id: params[:id])
@@ -19,5 +31,10 @@ class StoresController < ApplicationController
 		@take_info.save
 		flash[:notice] = "已送出申請, 站方人員將會與您聯繫"
 		redirect_to store_path(params[:id])
+	end
+
+	private
+	def store_params
+		params.require(:store).permit(:name , :address, :zip, :tel, :power, :status)
 	end
 end
