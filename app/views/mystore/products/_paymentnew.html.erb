@@ -1,0 +1,13 @@
+<div class="container">
+	<div class="row">
+		<%= bootstrap_form_for @product, url: mystore_products_path(@product) do |f| %>
+		<%= f.hidden_field :store_id, value: session[:sid] %>
+		<%= f.text_field :name %>
+		<%= f.select :category, @category.map { |c| [c.title]} %>
+		<%= f.text_field :price %>
+		<%= f.file_field :image %>
+		<%= f.text_area :desc %>
+		<%= f.submit 'submit' %>
+		<% end %>
+	</div>
+</div>

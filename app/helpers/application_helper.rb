@@ -10,4 +10,13 @@ module ApplicationHelper
 	  	link_to 'login', new_user_session_path 
 	  end
 	end
+
+	def check_payment
+		@store = Store.find(session[:sid])
+		if @store.power_cd?
+			render 'mystore/products/paymentnew'
+		else
+			render 'mystore/products/notpaymentnew'
+		end
+	end
 end

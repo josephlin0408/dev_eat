@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20150120014608) do
     t.string   "category",   limit: 255
     t.string   "name",       limit: 255
     t.integer  "price",      limit: 4
+    t.string   "image",      limit: 255
     t.text     "desc",       limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false

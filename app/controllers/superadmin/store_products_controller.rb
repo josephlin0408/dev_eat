@@ -3,7 +3,7 @@ class Superadmin::StoreProductsController < Superadmin::BaseController
 		session[:now_add] = nil
 		@store_products = StoreProduct.where(store_id: session[:sid])
 	end
-	def new
+	def new		
 		@store_product = StoreProduct.new
 		@store_category = StoreCategory.all
 	end

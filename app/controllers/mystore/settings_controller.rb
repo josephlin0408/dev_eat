@@ -1,6 +1,6 @@
 class Mystore::SettingsController < ApplicationController
 	def index
-		@settings = Store.all
+		@settings = Store.where(user_id: current_user.id)
 	end
 	def edit
 		@setting = Store.find_by(id: params[:id])
@@ -16,6 +16,6 @@ class Mystore::SettingsController < ApplicationController
 
 	private
 	def mystore_params
-		params.require(:store).permit(:name, :address, :zip, :tel)
+		params.require(:store).permit(:status, :name, :address, :zip, :tel)
 	end
 end
